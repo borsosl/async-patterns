@@ -19,10 +19,8 @@ function async(multipliers, useResult)
     function step2(index, x)
     {
         if(index === multipliers.length)
-        {
-            useResult(x);
-            return;
-        }
+            return useResult(x);
+
         console.log('Step 2, call #' + (index+1));
         x *= multipliers[index];
         setTimeout(step2.bind(null, index+1, x), 500);
